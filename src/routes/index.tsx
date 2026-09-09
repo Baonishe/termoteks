@@ -1,10 +1,46 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { CATEGORIES, COMPANY, PRODUCTS } from "@/lib/catalog";
 import { ProductCard } from "@/components/site/product-card";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({ component: Home });
+
+function HeroVideo() {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const play = el.play();
+    if (play) play.catch(() => {});
+  }, []);
+
+  return (
+    <>
+      <video
+        ref={ref}
+        className="pointer-events-none absolute inset-0 size-full object-cover opacity-55 motion-reduce:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/images/hero-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+      <img
+        src="/images/hero-poster.jpg"
+        alt="Склад рулонов TERMOTEKS в Любучанах"
+        className="absolute inset-0 hidden size-full object-cover opacity-55 motion-reduce:block"
+      />
+    </>
+  );
+}
 
 function Home() {
   const popular = PRODUCTS.filter((p) => p.popular);
@@ -12,23 +48,7 @@ function Home() {
   return (
     <div>
       <section className="relative min-h-[78vh] overflow-hidden bg-ink text-paper">
-        <video
-          className="pointer-events-none absolute inset-0 hidden size-full object-cover opacity-55 motion-safe:block"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/hero-poster.jpg"
-          aria-hidden="true"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <img
-          src="/images/hero-poster.jpg"
-          alt="Склад рулонов TERMOTEKS в Любучанах"
-          className="absolute inset-0 size-full object-cover opacity-55 motion-safe:hidden"
-        />
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />
         <div className="relative mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-end px-4 pb-16 pt-28">
           <p className="text-[11px] uppercase tracking-[0.28em] text-paper/70">
