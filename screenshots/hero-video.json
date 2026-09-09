@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "TERMOTEKS",
+      "hasCanvas": false,
+      "bodyTextLen": 2073,
+      "bodyTextHash": "3775514cf1e75f0bcf981e45213e5deaa77e8da68ef56e3034d40236ff5ea647",
+      "bodyTextPrefix": "ПРОИЗВОДИТЕЛЬ ТЕРМОКЛЕЕВЫХ МАТЕРИАЛОВ АССОРТИМЕНТ О КОМПАНИИ КЛИ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/hero-video.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "TERMOTEKS",
+      "hasCanvas": false,
+      "bodyTextLen": 2022,
+      "bodyTextHash": "33374544c543ffc0e156c357100ec5b64ebc549faad63f211d74583f474ed647",
+      "bodyTextPrefix": "АССОРТИМЕНТ О КОМПАНИИ КЛИЕНТАМ ДОСТАВКА БЛОГ КОНТАКТЫ ЗАЯВКА ПР",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/hero-video-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/hero-video.json"
+}
